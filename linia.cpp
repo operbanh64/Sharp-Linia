@@ -1,7 +1,6 @@
 #include<iostream>
 #include<ctime>
 #include<string>    
-using namespace std;
 
 int main()
 { 
@@ -12,40 +11,40 @@ int main()
     char symbol;
     int height;
     int width;
-    string random;
+    std::string random;
     int limit = 0;
 
     // Ввод данных
-    cout << "Linia - это программа которая выводит на экран геометрические фигуры с заданным символом.\n\n"; 
-    cout << "Какой использовать символ: ";
-    cin >> symbol;
+    std::cout << "Linia - это программа которая выводит на экран геометрические фигуры с заданным символом.\n\n"; 
+    std::cout << "Какой использовать символ: ";
+    std::cin >> symbol;
     error:
-    cout << "Сделать произвольную фигуру?(высота и ширина будут подобраны случайным образром): ";
-    cin >> random;
+    std::cout << "Сделать произвольную фигуру?(высота и ширина будут подобраны случайным образром): ";
+    std::cin >> random;
     if(random == "да"){
-        cout << "Введите лимит символов: ";
-        cin >> limit; 
+        std::cout << "Введите лимит символов: ";
+        std::cin >> limit; 
         height = 1 + rand() % limit;
         width = 1 + rand() % limit;
         goto linkRandom;
     }else if(random == "нет"){
-        cout << "Хорошо" << endl;
+        std::cout << "Хорошо" << std::endl;
     }else{
-        cout << "Неправильный Ввод.Введите да или нет" << endl; 
+        std::cout << "Неправильный Ввод.Введите да или нет" << std::endl; 
         goto error;
     }
 
-    cout << "Введите высоту: ";
-    cin >> height;
-    cout << "Введите ширину: ";
-    cin >> width;
+    std::cout << "Введите высоту: ";
+    std::cin >> height;
+    std::cout << "Введите ширину: ";
+    std::cin >> width;
 
     linkRandom:
     for(int i = 0; i < height; i++)
     {
         for(int a = 0; a < width; a++){
-            cout << symbol;
+            std::cout << symbol;
         }          
-        cout << symbol << endl;
+        std::cout << symbol << std::endl;
     }
 }
